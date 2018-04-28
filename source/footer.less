@@ -1,0 +1,120 @@
+// Style ogólne stopki 
+
+footer {
+	background: @dark-bg;
+	color: @footer-text-color;
+
+}
+
+
+.footer-main {
+	.container {
+		padding-top: 80px;
+		margin-bottom: 40px;
+		h4 {
+			.header-mixin(14px;700);
+			margin-bottom: 25px;
+			.upper;
+		}
+		ul {
+			.list-style-none;
+		}
+
+		a {
+			color: darken(@footer-text-color, 10%);
+			&:hover {
+				text-decoration: none; 
+				color: lighten(@footer-text-color, 10%);
+			}
+		}
+	}
+}
+
+// Kolumna O nas
+
+.footer-social {
+	li {
+		.inline-block;
+		margin-right: 6px;
+		margin-bottom: 3px;
+		a {
+			.basic-transition;       // Ikony
+			.center-text;
+			.inline-block;
+			.square(30px);
+			text-decoration: none;
+			&:hover > i {
+				color: lighten(@footer-text-color, 17%)
+			}
+			i {
+				.icon(@footer-text-color;16px;28px);
+			}
+		}
+	}
+}
+
+
+// Nasz blog i linki dwie klasy na raz
+
+.our-blog, .our-links {
+	li {
+		border-top: 1px solid @footer-border-color;       // linie otaczajace tekst
+		&:first-child {
+			border-top: none;          // likwidacja obramowania z pierwszego elementu
+		}
+
+		a {
+			.inline-block;
+			.padding-top-bottom(10px;10px);
+			line-height: 1.5;
+		}
+	}
+
+}
+
+.our-blog {
+	.footer-col-container {        // oddalenie i wyrownanie kolmn od prawej zagnieżdzenie
+		margin-right: 20px;
+	}
+}
+
+// Nasza galeria 
+
+.our-gallery {
+	.footer-col-container {
+		margin-left: 0;
+		@media @small {
+			margin-left: 38px;
+		}
+	}
+	li{
+		.inline-block;
+		margin-bottom: 30px;
+		margin-right: 2px;
+		img {
+			width: 70px;
+		}
+		a {
+			.basic-transition;
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+// Copyright 
+
+.copyright {
+	background: @copyright-bg;
+	.upper;
+	.center-text;
+	font-size: 12px;
+	@media @small {
+		text-align: left;
+	}
+}
+
+.copyright-content {
+	.padding-top-bottom(30px;10px);
+}
